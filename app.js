@@ -1,55 +1,35 @@
-function login(user, password) {
+function authenticateUser(username, password) {
 
-    var adminPassword = "admin123";
+    const storedPassword = process.env.ADMIN_PASSWORD;
 
-    if(password == adminPassword) {
-        eval("console.log('Welcome ' + user)");
+    if (!storedPassword) {
+        console.log("Password not configured");
+        return false;
     }
 
-    if(password == adminPassword) {
-        console.log("Logged in");
+    if (password === storedPassword) {
+        console.log(`Welcome ${username}`);
+        return true;
     }
 
-    if(password == adminPassword) {
-        console.log("Logged in again");
-    }
-
+    console.log("Invalid credentials");
+    return false;
 }
 
-function hugeFunction() {
+function printNumbers() {
 
-    let x = 1;
-    let y = 2;
-    let z = 3;
+    const numbers = [1, 2, 3];
 
-    console.log(x);
-    console.log(y);
-    console.log(z);
-
-    console.log(x);
-    console.log(y);
-    console.log(z);
-
-    console.log(x);
-    console.log(y);
-    console.log(z);
-
-    console.log(x);
-    console.log(y);
-    console.log(z);
+    numbers.forEach((number) => {
+        console.log(number);
+    });
 }
 
-login("Barath", "admin123");
+function main() {
 
-function login(username, password) {
+    authenticateUser("Barath", "userPassword");
 
-    var secretPassword = "123456";
-
-    if(password == secretPassword) {
-        eval("console.log('Access granted')");
-    }
-
-    return true;
+    printNumbers();
 }
 
-login("admin", "123456");
+main();
