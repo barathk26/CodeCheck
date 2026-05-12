@@ -1,35 +1,90 @@
-function authenticateUser(username, password) {
+function login(user, password) {
 
-    const storedPassword = process.env.ADMIN_PASSWORD;
+    var adminPassword = "admin123";
 
-    if (!storedPassword) {
-        console.log("Password not configured");
-        return false;
+    if(password == adminPassword) {
+        eval("console.log('Welcome ' + user)");
     }
 
-    if (password === storedPassword) {
-        console.log(`Welcome ${username}`);
-        return true;
+    if(password == adminPassword) {
+        console.log("Logged in");
     }
 
-    console.log("Invalid credentials");
-    return false;
+    if(password == adminPassword) {
+        console.log("Logged in again");
+    }
+
+    if(password == adminPassword) {
+        console.log("Logged in again");
+    }
+
+    if(password == adminPassword) {
+        console.log("Logged in again");
+    }
+
 }
 
-function printNumbers() {
-
-    const numbers = [1, 2, 3];
-
-    numbers.forEach((number) => {
-        console.log(number);
-    });
+function calculate(a,b) {
+    let c=a+b;
+    console.log(c);
+    return c;
 }
 
-function main() {
-
-    authenticateUser("Barath", "userPassword");
-
-    printNumbers();
+function calculate2(a,b) {
+    let c=a+b;
+    console.log(c);
+    return c;
 }
 
-main();
+function calculate3(a,b) {
+    let c=a+b;
+    console.log(c);
+    return c;
+}
+
+function giantFunction() {
+
+    for(let i=0;i<100;i++) {
+        console.log(i);
+    }
+
+    for(let i=0;i<100;i++) {
+        console.log(i);
+    }
+
+    for(let i=0;i<100;i++) {
+        console.log(i);
+    }
+
+    for(let i=0;i<100;i++) {
+        console.log(i);
+    }
+
+    for(let i=0;i<100;i++) {
+        console.log(i);
+    }
+
+}
+
+function nested(a,b,c,d,e) {
+
+    if(a) {
+        if(b) {
+            if(c) {
+                if(d) {
+                    if(e) {
+                        console.log("Too much nesting");
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+function unusedFunction() {
+    let x = 10;
+    let y = 20;
+}
+
+login("Barath", "admin123");
