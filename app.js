@@ -40,3 +40,16 @@ function hugeFunction() {
 }
 
 login("Barath", "admin123");
+
+function login(username, password) {
+
+    var secretPassword = "123456";
+
+    if(password == secretPassword) {
+        eval("console.log('Access granted')");
+    }
+
+    return true;
+}
+
+login("admin", "123456");
